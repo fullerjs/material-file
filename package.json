@@ -1,19 +1,28 @@
 {
-	"name": "fuller-material-file",
-	"version": "0.3.0",
-	"license" : "MIT",
-	"description": "Fuller material: local file",
-	"keywords": ["file", "material", "fuller", "build", "automation"],
-	"author": "Alexey Novikov (http://2dubs.com)",
-	"engines": {
-		"node": "~0.12.0",
-		"iojs": "^1.0.0"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git@github.com:fullerjs/material-file.git"
-	},
-	"dependencies": {
-		"fsu": "^0.2.0"
-	}
+  "author": {
+    "name": "Alexey Novikov",
+    "url": "http://2dubs.com"
+  },
+  "bugs": {
+    "url": "https://github.com/fullerjs/material-file/issues"
+  },
+  "dependencies": {
+    "fsu": "^1.0.0"
+  },
+  "description": "Fuller material: local file",
+  "homepage": "https://github.com/fullerjs/material-file#readme",
+  "keywords": [
+    "automation",
+    "build",
+    "file",
+    "fuller",
+    "material"
+  ],
+  "license": "MIT",
+  "name": "fuller-material-file",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/fullerjs/material-file.git"
+  },
+  "version": "0.3.0"
 }
