@@ -7,7 +7,7 @@
     "url": "https://github.com/fullerjs/material-file/issues"
   },
   "dependencies": {
-    "fsu": "^1.0.0"
+    "fsu": "^1.0.4"
   },
   "description": "Fuller material: local file",
   "homepage": "https://github.com/fullerjs/material-file#readme",

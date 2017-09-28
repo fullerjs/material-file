@@ -8,7 +8,7 @@ const Stream = require('stream').Stream;
 const Transform = require('stream').Transform;
 const isArray = Array.isArray;
 
-let File = function(file) {
+const File = function(file) {
   if (!file) {
     file = {};
   }
@@ -86,7 +86,7 @@ File.prototype.write = function(options, cb) {
     options.force = true;
   }
 
-  let save = fsu.createWriteStreamUnique(this._dst.path, options);
+  const save = fsu.createWriteStreamUnique(this._dst.path, options);
 
   this._error && save.on('error', this._error);
   cb && save.on('finish', cb);
@@ -100,7 +100,6 @@ File.prototype.getContent = function(cb) {
     return this;
   }
 
-  let self = this;
   let buffer = [];
   let reader = new Transform({
     transform: (chunk, encoding, next) => {
@@ -108,7 +107,7 @@ File.prototype.getContent = function(cb) {
       next();
     },
     flush: done => {
-      cb( self.setContent(buffer.join('')).content );
+      cb( this.setContent(buffer.join('')).content );
       done();
     }
   });
