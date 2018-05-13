@@ -3,7 +3,7 @@ const fs = require('fs');
 const fsu = require('fsu');
 const path = require('path');
 
-const Buf = require('buffer').Buffer;
+const Buffer = require('buffer').Buffer;
 const Stream = require('stream').Stream;
 const Transform = require('stream').Transform;
 const isArray = Array.isArray;
@@ -28,7 +28,7 @@ const File = function(file) {
 };
 
 File.prototype.isBuffer = function() {
-  return typeof this.content === 'object' && this.content instanceof Buf;
+  return typeof this.content === 'object' && this.content instanceof Buffer;
 };
 
 File.prototype.isStream = function() {
@@ -107,7 +107,7 @@ File.prototype.getContent = function(cb) {
       next();
     },
     flush: done => {
-      cb( this.setContent(buffer.join('')).content );
+      cb(this.setContent(buffer.join('')).content);
       done();
     }
   });
@@ -118,7 +118,7 @@ File.prototype.getContent = function(cb) {
 
 File.prototype.setContent = function(content) {
   if (typeof content === 'string') {
-    content = new Buf(content);
+    content = Buffer.from(content);
   }
   this.content = content || null;
   return this;
@@ -132,9 +132,9 @@ File.prototype.dst = function(dst) {
       dirname: path.dirname(dst)
     };
     return this;
-  } else {
-    return this._dst;
   }
+
+  return this._dst;
 };
 
 File.prototype.dependencies = function(deps) {
@@ -145,9 +145,9 @@ File.prototype.dependencies = function(deps) {
       this._dependencies.add(deps);
     }
     return this;
-  } else {
-    return this._dependencies;
   }
+
+  return this._dependencies;
 };
 
 File.prototype.clear = function() {
